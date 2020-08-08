@@ -2,7 +2,7 @@
 
 Today, i write a simple program that prints squares in numbers, to prove that the sum of odd numbers are square.  
 
-If we have one item and add a odd number of items to it, the items form a square.
+If we have one item and add a odd number of items to it, the items forms a square.
 
 - 2 Square = 4 = 1 + 3 
 - 4 Square = 16 = 1+3+5+7
@@ -21,7 +21,7 @@ The Output of `aoc_01-sumofofodd.cpp`
     81
 
 
-A geomatrical Prove of the sum of Odd is square:
+A geometrical Prove of the sum of Odd is square:
 
 ![](/images/sumofodd_is_square.png)
 
