@@ -5,13 +5,13 @@ A `Hash Table` (or dictonary, associative array) is a datastructure that maps ke
 It's name derived from the fact that the keys or pointers to them are hashed (often with some collision resolution strategy) and stored in a table with the associated values (the hash indicates where the value is stored).
 
 Useful for caches to speed up data-access, sets, indexing, uniqueness (dictonary, unique string lookups).
-A hash-table is also used for Objects in dynamic languages, where one object is a hash-table with names of members and methods are the keys and the values are pointer to the methods and members. Or a Combination of an array and a hash for instance variables ([2] ruby)
+A hash-table is also used for Objects in dynamic languages, where one object is a hash-table with names of members and methods are the keys and the values are pointer to the methods and members. Or a Combination of an array and a hash for instance variables ([1] ruby)
 
 
 
 ### map and unordered map
 
-If you have a reason to use a different container,  other than `std::array` or `std::vector` [1], use `std::unordered_map` [3] or if the keys have to be sorted: `std::map`.
+If you have a reason to use a different container,  other than `std::array` or `std::vector` [2], use `std::unordered_map` [3] or if the keys have to be sorted: `std::map`.
 
 
 Example a "string" to "string" map:
