@@ -1,3 +1,10 @@
+---
+layout: post
+title: make
+description: make and cmake
+tags: c++ 
+---
+
 ## Make
 
 I use Makefiles a lot, i bet it's the most copied build-system, just because of the Tab-Separator.

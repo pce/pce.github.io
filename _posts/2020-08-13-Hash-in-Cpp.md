@@ -1,3 +1,10 @@
+---
+layout: post
+title: hash table
+description: array, vector, unordered_map and map
+tags: c++ data-structures 
+---
+
 ## Hash
 
 A `Hash Table` (or dictonary, associative array) is a datastructure that maps keys to values.

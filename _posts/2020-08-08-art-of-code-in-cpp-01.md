@@ -1,3 +1,11 @@
+---
+layout: post
+title: Sum of odd is square
+description: auto vector 
+tags: c++ art-of-code
+---
+
+
 ## Art of Code 01
 
 Today, i write a simple program that prints squares in numbers, to prove that the sum of odd numbers are square.  
