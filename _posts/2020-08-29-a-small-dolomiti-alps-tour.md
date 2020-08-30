@@ -41,7 +41,7 @@ To walk in a breeze of fresh air in silence and to see the sunrise is also a Joy
 [Soffia Waterfalls]  
  
 
-Vis a vis to the Soffia Waterfalls there is Cardini of Brenton.
+Across the street from the Soffia Waterfalls is Cardini of Brenton.
 
 ![](/images/cadini-of-brenton_0017.JPG)  
 [Cardini of Brenton]  
