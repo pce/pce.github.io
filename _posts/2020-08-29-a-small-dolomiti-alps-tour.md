@@ -1,4 +1,9 @@
-
+---
+layout: post
+title: a small Dolomiti Tour
+description: culture shock in dolomiti (south-tyrol - italy)
+tags: hike 
+---
 
 # a small Dolomiti Tour
 
