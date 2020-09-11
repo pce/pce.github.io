@@ -1,3 +1,12 @@
+---
+layout: post
+title: Automate Devops
+description: Fabric 
+tags: 
+---
+
+
+
 # Automate devops with Fabric
 
 This "recipe" allows "remote" Dev-Ops from a local machine with Fabric 2.3.1.
@@ -30,7 +39,7 @@ def devops(c):
 
 The fabfile reads `~/.ssh/config`, where the Host: web1 (example.com) is configured.
 
-Set up the hosts to automate:  ` cat ~/.ssh/config`        
+Set up the hosts to automate:  `cat ~/.ssh/config`        
 
     
     Host web1

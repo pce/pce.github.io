@@ -1,3 +1,10 @@
+---
+layout: post
+title: what is feminism?
+description: Feminism is a movement to end sexism, sexist exploitation, and oppression 
+tags: 
+---
+
 # what is feminism?
 
 > "Feminism is a movement to end sexism, sexist exploitation,
