@@ -17,6 +17,17 @@ html {
   font-size: 100%;
 }
 
+html::before {content:'<html>'}
+html::after {content:'</html>'}
+body::before {content:'<body>'}
+body::after {content:'</body>'}
+*::before,*::after {
+  background: $gray;
+  color: $black;
+  line-height: 1rem;
+  font-size: 1rem;
+}
+
 body {
 	background: $white;
   font: 18px/1.4 $palatino;
@@ -27,8 +38,15 @@ body {
   margin: 0 auto;
   max-width: 740px;
   padding: 0 10px;
-  width: 100%;
+  width: 100%;  
 }
+
+
+// #main {
+//   box-shadow: 0 0 4px 0 rgba(17,22,26,.16),0 2px 4px 0 rgba(17,22,26,.08),0 4px 8px 0 rgba(17,22,26,.08);
+//   border-radius: 5px;
+// }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $palatino;
