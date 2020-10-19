@@ -17,16 +17,6 @@ html {
   font-size: 100%;
 }
 
-html::before {content:'<html>'}
-html::after {content:'</html>'}
-body::before {content:'<body>'}
-body::after {content:'</body>'}
-*::before,*::after {
-  background: $gray;
-  color: $black;
-  line-height: 1rem;
-  font-size: 1rem;
-}
 
 body {
 	background: $white;
