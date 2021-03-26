@@ -51,7 +51,7 @@ int32 index = getIndex();
 
 #### &&
 
-In C++11 the rvalue reference `&&` to bind a nutable refernce to an rvalue.  
+In C++11 the rvalue reference `&&` to bind a mutable refernce to an rvalue.  
 
 ```c++ 
 // rvalue reference can be const or no const
