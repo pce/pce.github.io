@@ -1,16 +1,19 @@
 ---
 layout: post
-title: Copy/Move Semantics
+title: Move Semantics
 description: Rule of Three/Five 
 tags: c++
 ---
 
 
 
-## Move Semantics
+## Move Semantics - lvalue, rvalue and &&
 
-Most of the time, resources are already managed in an existing class, such as `std::string`, where the handling of `char*` is already done. 
 
+Move Semantics allows to move contents between objects, rather than copying contents.
+
+
+Move Semantics are based on rvalue references and to understand move semantics, you need to understand the concept of lvalue, rvalue and &&.
 
 ### lvalue, rvalue and &&
 

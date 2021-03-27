@@ -1,0 +1,37 @@
+
+Do not retrun a refernce or pointer that 
+0 is not a valid pointer address (`0`, not the `NULL` Macro as one would use in C) and can be used for "unused" pointers, to prevent bugs: derefencing results in a Segment Violation.   
+
+
+
+
+### memory page and memory frame
+
+## QUIZ 32 BIT
+
+2^32 bytes = 4GB; 
+
+a 32-bit address space gives a program a (theoretical) total of 4 GB of memory it can address. 
+In practice, the operating systems reserves some of this space however.
+
+
+
+
+
+
+
+// Sending a message in Ruby (https://www.youtube.com/watch?v=9mLK_8hKii8).
+// If the Date-Object is initialized with the Date of today or the Date of Today is sended to the Object.
+Calling a `NextDay` Method of an `Date` instance that returns the Date of tomorrow. 
+For Example a `class Date` with the members `day_`, `month_`, `year_`.  
+
+, but Idempotence can also be computed with objects
+
+State can produce Side-Effects, because of the Mutabilty. 
+
+In the pure functional Programming domain an object which stores and access "state" (data in members) violates the "pure" model.  
+
+
+As an alternative to inheritance, one can operate on a interface.   
+
+http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c137-use-virtual-bases-to-avoid-overly-general-base-classes
