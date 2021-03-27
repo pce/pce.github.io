@@ -9,8 +9,7 @@ tags: c++
 
 ## Move Semantics
 
-Most of the time, resources are already managed in a existing class, such as `std::string`, where the handling of `char*` is already done. 
-
+Most of the time, resources are already managed in an existing class, such as `std::string`, where the handling of `char*` is already done. 
 
 
 ### lvalue, rvalue and &&
@@ -39,7 +38,7 @@ getIndex() = 42;
 
 #### rvalue
 
-If a function does return a temporary object, not a fixed location or refernce, it is a rvalue:
+If a function does return a temporary object, not a fixed location or reference, it is a rvalue:
 
 ```c++ 
 int32 getIndex() {
@@ -51,7 +50,7 @@ int32 index = getIndex();
 
 #### &&
 
-In C++11 the rvalue reference `&&` to bind a mutable refernce to an rvalue.  
+In C++11 the rvalue reference `&&` to bind a mutable reference to an rvalue.  
 
 ```c++ 
 // rvalue reference can be const or no const

@@ -24,7 +24,7 @@ delete inc;
 ```
 
 Like in C, where every allocation (`malloc`, `realloc`) needs a `free`. 
-One should not loose the given base-pointer by `new` to `delete` the reserved memory. An enhancement of the C++ dynamic Memory Administration is to think in blocks, not bytes. `new` returns a base-pointer (pointer to the start-address) to a memeroy-block of the size of the Data-Type. 
+One should not loose the given base-pointer by `new` to `delete` the reserved memory. An enhancement of the C++ dynamic Memory Administration is to think in blocks, not bytes. `new` returns a base-pointer (pointer to the start-address) to a memory-block of the size of the Data-Type. 
 
 
 
