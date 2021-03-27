@@ -60,10 +60,10 @@ int32&& index = getIndex();
 
 It is often used for move constructor and move assignment operator.
 
-Despite that, rvalue refernce is a modern technique to optimze the processing speed and memory usage.
-How ? 
-In an lvalue assignment a new rvalue is created and copied the result to the memory location of the lvalue. 
-More efficent is a rvalue reference that assigns the address of the temporary objects, while supporting exclusive ownership.
+Despite that, rvalue reference is a modern technique to optimize the processing speed and memory usage.
+How?   
+In an lvalue assignment a new rvalue is created and copied the result to the memory location of the lvalue.  
+More efficient is an rvalue reference that assigns the address of the temporary objects, while supporting exclusive ownership.
 
 ```c++
     int a = 1; 
