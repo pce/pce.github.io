@@ -17,9 +17,9 @@ C++11 Smart Pointers
 
 Before C++11 introduced those, `std::auto_ptr` tries to resolve the same (with unusual copy semantics that behaves like move semantics) and is now deprecated and removed in C++17, the `std::unique_ptr` is preferd.    
 
+> It's all about Scope
 
-The shared pointer behaves like a Garbage Collector, the last one stop using it will implicity delete the object. It is important Scope. Prefer local objects before using a shared pointer.
-
+The shared pointer behaves like a Garbage Collector, the last one stop using it will implicity delete the object. Prefer local objects before using a shared pointer.
 
 
 Basic usage of `shared_ptr` Example (assign, reset and copy). 
@@ -32,11 +32,17 @@ using std::cout;
 using std::endl;
 
 void smartReset(std::shared_ptr<int>& sharedIndex){
-  cout << "smartReset#sharedIndex.use_count(): " << sharedIndex.use_count() << endl;
+  cout << "smartReset() sharedIndex.use_count(): " << sharedIndex.use_count() << endl;
   // magic: reset replaces the managed object 
   sharedIndex.reset(new int(256));
-  cout << "smartReset#sharedIndex.use_count(): " << sharedIndex.use_count() << endl;
-  cout << "smartReset#sharedIndex: " << *sharedIndex << endl;
+  cout << "smartReset() sharedIndex.use_count(): " << sharedIndex.use_count() << endl;
+  cout << "smartReset() sharedIndex: " << *sharedIndex << endl;
+}
+
+void smartInc(std::shared_ptr<int>& sharedIndex){
+  *sharedIndex += 128;
+  // smartInc() sharedIndex: 384
+  cout << "smartInc() sharedIndex: " << *sharedIndex << endl;
 }
 
 int main() {
@@ -48,10 +54,11 @@ int main() {
   // sharedIndex.use_count(): 2
   cout << "sharedIndex.use_count(): " << sharedIndex.use_count() << endl;
   smartReset(sharedIndex);  
+  smartInc(sharedIndex);  
   cout << "secondSharedIndex.use_count(): " << secondSharedIndex.use_count() << endl;
   // secondSharedIndex: 42
   cout << "secondSharedIndex: " << *secondSharedIndex << endl;
-  // sharedIndex: 256
+  // sharedIndex: 384
   cout << "sharedIndex: " << *sharedIndex << endl;
 }
 ```
