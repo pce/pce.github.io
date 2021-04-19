@@ -6,7 +6,7 @@ tags: c++
 ---
 
 
-## proccess and threads
+## process and threads
 
 A process (also called a task) is controlled by the operating system and managed by the scheduler (A common "interrupting scheduler" switches between active process).
 A process goes through one of the following defined states:
