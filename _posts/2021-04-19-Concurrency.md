@@ -8,43 +8,43 @@ tags: c++
 
 ## proccess and threads
 
-A process (also called a task) is controlled by the OS and manged by the Scheduler (A common "interrupting scheduler" switches between active proceses).
-A Process passes through one of these defined states:
+A process (also called a task) is controlled by the operating system and managed by the scheduler (A common "interrupting scheduler" switches between active process).
+A process goes through one of the following defined states:
 
-- 1. created or new (initial state in the process life cycle)
-- 2. ready (process is loaded into main memory and waits in a queue to get assigned by the processor or scheduler)
-- 3. running (is selected for execution)
-- 4. block or wait (waits for an event, such as I/O) 
-- 5. completion or termination (completed or explicit killed, may remain as a zombie till its lifetime ends)
-- 6. suspend ready (swapped out of main memory from ready state)
-- 7. suspend blocked or wait (a blocked process swapped out from main memory)
+1. created or new (initial state in the process life cycle)
+2. ready (process is loaded into main memory and waits in a queue to be allocated by the processor or scheduler)
+3. running (selected for execution)
+4. block or wait (waiting for an event, e.g. I/O) 
+5. completion or termination (completed or explicitly terminated, may remain as a zombie until the end of its life)
+6. suspend ready (is swapped out of the main memory from the ready state)
+7. suspend blocked or wait (a blocked process that is swapped out of main memory)
 
 
-Operations are Creation, Scheduling, Execution and Deleting/Killing. 
+Operations are create, schedule, execute and delete/kill.
+
 
 
 ## threads
 
-The OS supports a more resource-friendly way of realizing concurrent operations: the threads.
-Threads allow multiple functions to execute concurrently within a process.
+The operating system supports a more resource-efficient way of performing concurrent operations: threads.
+Threads allow multiple functions to be executed simultaneously within a process.
 
-Life Cycle of a thread
+Life cycle of a thread
 
 - new (created and not yet started)
-- runnable (runs or is ready to run, it is the responsibility of the thread scheduler to assign CPU time to the thread)
-- blocked (inactive in blocked or wating state)
-
+- runnable (running or ready to run, it is the responsibility of the thread scheduler to allocate CPU time to the thread)
+- blocked (inactive in blocked or waiting state)
 
 <!-- // In C++ there are POSIX threads and since C++11 thread. -->
 
 ### concurrency 
 
-A parallel path of execution, which runs concurrently with the main program is asynchronous.
-Data Access from all the threads must be consistent.
+A parallel execution path that runs in parallel with the main program is asynchronous.
+Data access from all threads must be consistent.
 
-A c++11 `thread` is launched and waits to finish by join.
+A C++11 `thread` is started and waits to be terminated by join.
 
-Running a single thread 
+#### Running a single thread 
 ```c++
 #include <iostream>
 #include <thread>
@@ -73,7 +73,7 @@ Thread #1, id: 0x70000b067000
 ```
 
 
-Creating multiple threads 
+#### Creating multiple threads 
 ```c++ 
 
 #include <iostream>
@@ -91,7 +91,7 @@ int main() {
 
   std::cout << "Hello concurrent world, main Thread id : " << std::this_thread::get_id() << std::endl;
 
-  // lambdas that calls a fuunction 
+  // lambda calls  
   std::thread threads([]{
   for(int i = 0; i < 10000; i++)
     call_from_thread(i, false);
@@ -134,8 +134,8 @@ Thread #9655, id: 0x700008b2b000
 ``` 
 
 
-A [powerful example of prallel programming](https://solarianprogrammer.com/2011/12/16/cpp-11-thread-tutorial/
-) of complex image processing, may be to launch a number of threads (7 for a quad-core system), each one will process his chunk of the image. 
+A [powerful parallel programming example](https://solarianprogrammer.com/2011/12/16/cpp-11-thread-tutorial/
+) for complex image processing might be to start a number of threads (7 for a quad-core system), each thread processes its part of the image. 
 
 
 
