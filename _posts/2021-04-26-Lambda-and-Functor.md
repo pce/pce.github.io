@@ -109,7 +109,7 @@ Output:
 clang++ -std=c++11 -stdlib=libc++ -g func.cpp && ./a.out
 sum: 3
 add to local sum 2: 5
-add over funcion-object 3: 65
+add over funcion-object 3: 6
 ```
 
 
