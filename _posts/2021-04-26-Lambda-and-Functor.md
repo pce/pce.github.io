@@ -72,6 +72,8 @@ Before C++11: add an extra pair of parentheses ()
 
 A lambda is an anonymous function (closure). 
 
+The Name is based on the λ-calculus, a mathematical formal system, which was introduced in the 1930s by Alonzo Church.
+
 
 ```c++
 #include <iostream>
