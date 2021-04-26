@@ -46,21 +46,21 @@ The "most vexing parse" comes from a rule in C++ that says that anything that co
 
 ##### How to fix the most vexing parse:
 
-1. C++11 uniform initialization, calling constructors with curly braces {} instead of parentheses ()
+C++11 uniform initialization, calling constructors with curly braces {} instead of parentheses ()
 
 ```c++
     std::thread t{MyFunctor()};
 ```
 
 
-2. copy initialization (or "auto to stick") syntax
+Copy initialization (or "auto to stick") syntax
 
 ```c++
     std::thread t = std::thread( MyFunctor() );
     auto t2 = std::thread(MyFunctor());
 ```
 
-3. Before C++11: add an extra pair of parentheses ()
+Before C++11: add an extra pair of parentheses ()
 
 ```c++
     std::thread t((MyFunctor()));
@@ -71,7 +71,6 @@ The "most vexing parse" comes from a rule in C++ that says that anything that co
 ### lambda
 
 A lambda is an anonymous function (closure). 
-
 
 
 ```c++
