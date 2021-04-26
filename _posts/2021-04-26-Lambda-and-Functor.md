@@ -73,6 +73,7 @@ The "most vexing parse" comes from a rule in C++ that says that anything that co
 A lambda is an anonymous function (closure). 
 
 
+
 ```c++
 #include <iostream>
 
@@ -139,11 +140,12 @@ int main() {
 
 ### Lambda Syntax
 
-Controlling Lambda Capture
+`[ captures ] <tparams> ( params ) lambda-specifiers { body }`
+
+Controlling lambda capture (context) syntax
 
 
-|   1  | 2    |
-|:----:|------|
+|:----|:------|
 | []  | capture nothing |
 | [&] |   Capture everything by reference   |
 | [=] |   Capture everything by value (may not cheap)   |
@@ -154,7 +156,7 @@ Controlling Lambda Capture
 | [&, ctr1, ctr2] |  Capture ctr1 and ctr2 by value and everthing else by refernce   |
 
 
-[https://en.cppreference.com/w/cpp/language/lambda](lambda reference)
+[lambda reference](https://en.cppreference.com/w/cpp/language/lambda)
 
 
 ### Lambda rules
