@@ -8,7 +8,7 @@ tags: c++
 ## Passing Data
 
 
-In a lambda or varidatic template thread, we pass data (via arguments or capture) from the parent thread (i.e. main) to the worker thread.   
+In a lambda or variadic template thread, we pass data (via arguments or capture) from the parent thread (i.e. main) to the worker thread.   
 
 
 ```c++  
@@ -77,7 +77,7 @@ int main()
     std::thread t([&prms]{
         try {
             // code that may throw
-            // p.set_value(42);           
+            // prms.set_value(42);
             throw std::runtime_error("Example");
         } catch(...) {
             prms.set_exception(std::current_exception());
@@ -113,7 +113,6 @@ A promise creates a Channel.
 ### Future
 
 
-
 As in life, a promise is useless without Future.
 Future is used to retrieve the promised value.
  
@@ -127,13 +126,12 @@ if a `std::future::valid()` returns true: `std::future::wait()` to perform a blo
 > ⚠️ `std::future::get()` invalidates the state, so "get" can be called **only once**
 
 
+Syncronization: a future get call blocks (task), a thread join is waiting (thread).
+
+> ℹ️  A `std::shared_future` is copyable or can refer to shared state (with other asycronous return objects). [std::shared_future](https://en.cppreference.com/w/cpp/thread/shared_future) 
 
 [std::future](https://en.cppreference.com/w/cpp/thread/future) 
 
-
-Syncronization: a future get call blocks (task), a thread join is waiting (thread).
-
-> ℹ️  A `std::shared_future` is copyable or can refer to shared state (with other asycronous return obejcts). [std::shared_future](https://en.cppreference.com/w/cpp/thread/shared_future) 
 
 ## Async
 
