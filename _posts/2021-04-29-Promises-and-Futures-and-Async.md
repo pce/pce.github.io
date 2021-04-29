@@ -124,8 +124,8 @@ To pair a Promise with a Future `promise::get_future`.
 if a `std::future::valid()` returns true: `std::future::wait()` to perform a blocking wait until the result becomes available (or `std::future::wait_for(timeout)`) and `std::future::get()` to return the provided result or an exception. 
 
 
-:warning: | `std::future::get()` invalidates the state, so "get" can be called **only once**
-:---: | :---
+> :warning: `std::future::get()` invalidates the state, so "get" can be called **only once**
+
 
 
 [std::future](https://en.cppreference.com/w/cpp/thread/future) 
@@ -133,9 +133,7 @@ if a `std::future::valid()` returns true: `std::future::wait()` to perform a blo
 
 Syncronization: a future get call blocks (task) because thread join is waiting (thread).
 
-:information_source: | A `std::shared_future` is copyable or can refer to shared state (with other asycronous return obejcts). [std::shared_future](https://en.cppreference.com/w/cpp/thread/shared_future) 
-:---: | :---
-
+> :information_source:  A `std::shared_future` is copyable or can refer to shared state (with other asycronous return obejcts). [std::shared_future](https://en.cppreference.com/w/cpp/thread/shared_future) 
 
 ## Async
 
@@ -184,7 +182,7 @@ int main()
 
 ```
 
-A simple example where async takes a callable (lambda) and stores the result in a vecotor of futures.   
+A simple example where async takes a callable (lambda) and stores the result in a vector of futures.   
 
 ```c++ 
 #include <iostream>
