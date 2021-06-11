@@ -1,4 +1,216 @@
 
+
+// ML NOTES
+http://faculty.kutztown.edu/rieksts/548/lectures/ML%20per%20Geron.html
+
+
+
+
+... SciKitLearn example:
+
+
+- https://gist.github.com/asimshankar/5c96acd1280507940bad9083370fe8dc
+
+
+
+
+Is this possible in a predictable way? As a Graph?  
+
+What if the Machine observes that the flashes during a thunder, when the Ample is green and low traffic is on streets, are the Metrics and the Graph  
+
+// unsupervised ML: NN (neuronal nets like autoencoder, restricted boltzmann machines or deep belief networks)
+
+// "learn about the fish and to catch the fish, instead of just buying the fish". Or in this Context,
+
+- Random Forests (and descision trees)
+- Support Vector Machines (SVM)
+
+And 
+
+- Clustering (k-Means, HCA, expected Maximizatin)
+- dimensionally reduction (i can currently hardly imagine 4D, what about 4200?)
+- Validation  (Train and Test, K-Fold Cross Validation)
+
+
+Regression
+To predict a target numeric value, that is not part of a given set, such as the price of a car, given a set of features (mileage, age, brand, etc.) called predictors. 
+
+
+### Logistic Regression Algorithm
+
+...
+
+# Testing and Validation
+
+> To avoid “wasting” too much training data in validation sets, a common technique is to use cross-validation: the training set is split into complementary subsets, and each model is trained against a different combination of these subsets and validated against the remaining parts.
+
+
+
+
+http://www.gerald-fahrnholz.eu/sw/online_doc_multithreading/html/group___grp_promise_future.html
+
+https://www.modernescpp.com/index.php/tasks
+
+
+```c++  
+#include <iostream>
+#include <thread>
+#include <future>
+
+void modifyMessage(std::promise<std::string> &&prms, std::string message)
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(4000)); // simulate work
+    std::string modifiedMessage = message + " has been modified"; 
+    prms.set_value(modifiedMessage);
+}
+
+int main()
+{
+    // define message
+    std::string messageToThread = "My Message";
+
+    // create promise and future
+    std::promise<std::string> prms;
+    std::future<std::string> ftr = prms.get_future();
+
+    // start thread and pass promise as argument
+    std::thread t(modifyMessage, std::move(prms), messageToThread);
+
+    // print original message to console
+    std::cout << "Original message from main(): " << messageToThread << std::endl;
+
+    // retrieve modified message via future and print to console
+    std::string messageFromThread = ftr.get();
+    std::cout << "Modified message from thread(): " << messageFromThread << std::endl;
+
+    // thread barrier
+    t.join();
+
+    return 0;
+}
+```
+
+
+
+
+
+
+async may run as a task?
+
+
+### move semantics 
+
+vector of threads with move semantics 
+
+https://stackoverflow.com/questions/30768216/c-stdvector-of-independent-stdthreads
+
+
+### Concurrency rules
+
+[C++ Core Guidelins of Concurrency](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-concurrency
+) 
+
+
+- [CP.1: Assume that your code will run as part of a multi-threaded program](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rconc-multi)
+
+
+
+
+```
+#include <iostream>
+#include <thread>
+
+int main()
+{
+    int id = 0; // Define an integer variable
+
+    // starting a first thread (by reference)
+    auto f0 = [&id]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::cout << "a) ID in Thread (call-by-reference) = " << id << std::endl;
+    };
+    std::thread t1(f0);
+
+    // starting a second thread (by value)
+    std::thread t2([id]() mutable {
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::cout << "b) ID in Thread (call-by-value) = " << id << std::endl;
+    });
+
+    // increment and print id in main
+    ++id;
+    std::cout << "c) ID in Main (call-by-value) = " << id << std::endl;
+
+    // wait for threads before returning
+    t1.join();
+    t2.join();
+
+    return 0;
+}
+```
+ g++ -pthread -std=c++11 example_6.cpp 
+root@cb50405c1dc3:/home/workspace# ./a.out 
+c) ID in Main (call-by-value) = 1
+b) ID in Thread (call-by-value) = 0
+a) ID in Thread (call-by-reference) = 1
+
+
+
+#0
+1
+0 in Main
+1 
+1 in Main
+2 
+2 in lambda!
+
+
+```c++
+#include <iostream>
+
+int main()
+{
+    int id = 0; // Define an integer variable
+
+    // capture by reference (immutable)
+    auto f0 = [&id]() { std::cout << "a) ID in Lambda = " << id << std::endl; };
+
+    // capture by value (mutable)
+    auto f1 = [id]() mutable { std::cout << "b) ID in Lambda = " << ++id << std::endl; };
+    f1(); // call the closure and execute the code witin the Lambda
+    std::cout << "c) ID in Main = " << id << std::endl;
+
+    // capture by reference (mutable)
+    auto f2 = [&id]() mutable { std::cout << "d) ID in Lambda = " << ++id << std::endl; };
+    f2(); 
+    std::cout << "e) ID in Main = " << id << std::endl; 
+
+    // pass parameter 
+    auto f3 = [](const int id) { std::cout << "f) ID in Lambda = " << id << std::endl; };   
+    f3(++id);
+
+    // observe the effect of capturing by reference at an earlier point in time
+    f0(); 
+
+    return 0;
+}
+
+```
+
+## functional programming style
+
+Functional Programing is writing functions similiar to the mathematical function notation.
+Everything is immutable in functional programming (ie, parameters passed to a lambda).  
+Lambdas (C++11) bring a touch of functional programming into C++.  
+
+
+C++ lambdas supersets functors (and may written as anonymous functors by compilers, see: https://blog.feabhas.com/2014/03/demystifying-c-lambdas/).
+
+
+
+
+
+
 Do not retrun a refernce or pointer that 
 0 is not a valid pointer address (`0`, not the `NULL` Macro as one would use in C) and can be used for "unused" pointers, to prevent bugs: derefencing results in a Segment Violation.   
 
