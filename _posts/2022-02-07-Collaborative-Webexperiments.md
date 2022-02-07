@@ -61,7 +61,7 @@ A small Typescript NestJS Server with SocketIO as WebSocket Gateway  and express
 The standard solutions are OT (Operational Transform) or CRDT (convergent or commutative replicated data type).
 
 - OT: Operations are sent over the wire and concurrent operations are transformed once they are received.
-- CvRDTs (convergent replicated data types): State based. Its full local state is sent and is merged with the state of a copy (or optimized, Delta Muations). 
+- CvRDTs (convergent replicated data types): State based. Its full local state is sent and is merged with the state of a copy (or optimized, Delta Mutations). 
 - CmRDTs (commutative replicated data types) operation based, for example only "+b" is transmitted and applied locally (a+b has the same result as b+a and is therfore commutative).
 
 
