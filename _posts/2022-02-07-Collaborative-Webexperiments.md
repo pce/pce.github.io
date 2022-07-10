@@ -84,8 +84,9 @@ This pragmatic approach is of course only a crutch to be able to test a proof of
 | Release     |      Value          |  Status  |
 |:------------|:-------------------|:----------|
 | enphi v0.1  |  very basic Collab  |  `DONE`  |
-|       v0.2  |  Persistence, DB?    |  `TODO`  |
+|       v0.2  |  Persistence, DB?    |  `WIP`  |
 
 
 
-The repository is currently private and is deployed from github to digitalocean.
+The repository was private and deployed from github to digitalocean and used a terminated mongodb-cluster: https://github.com/pce/worldcongress
+
