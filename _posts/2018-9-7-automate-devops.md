@@ -9,6 +9,7 @@ tags:
 
 # Automate devops with Fabric
 
+
 This "recipe" allows "remote" Dev-Ops from a local machine with Fabric 2.3.1.
 
 One way is to `pip install fabric`. 
@@ -65,8 +66,6 @@ The -H flag is the Host of ssh-config and `devops` the task:
 
 
 
+## Conclusion
 
-
-
-
-
+Fabric is great for simple remote tasks. To push more over the wire, I would prefer Ansible, Chef or Puppet.

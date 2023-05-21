@@ -29,11 +29,3 @@ While gender equality and women's liberation (abortion, household, parenting) is
 - Anti-Racism
 
 
-## More Questions to explore
-
-- What is sexism?
-- Born as a Woman qualifies to be a Feminism? 
-- what is patriarchy?
-- what does it mean to be white and materially privileged? 
-- what is racism?
-
